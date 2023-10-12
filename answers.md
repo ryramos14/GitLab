@@ -48,7 +48,7 @@ What branches would change, and how?
 git checkout test
 git merge top_N
 ```
-All the changes in top_N will be merged into the test branch.
+It's a fast forward merge, and all the changes in the top_N code file will take precidence over the code file in test.
 
 6. What do you think would happen if you ran the following commands?
 What branches would change, and how?
@@ -56,7 +56,7 @@ What branches would change, and how?
 git checkout top_ten
 git merge test
 ```
-The changes made in the test branch will be merged into the top_ten branch.
+Fast forward merge. The changes done in the top_ten code file change, but the name of quiz.md changes.
 
 7. What do you think would happen if you ran the following commands?
 What branches would change, and how?
@@ -65,4 +65,4 @@ git checkout test
 git rebase top_ten
 git rebase top_N
 ```
-Running this command will put the changes made from top_ten and top_N in front of the earliest change of test.
+The test branch would change. It's code file would update to have the top_N code in it.
