@@ -11,11 +11,22 @@ xanda_0000_movie_processing?
 (For this and future questions, the first 5 characters is plenty - neither
 Git nor I need the whole SHA.)
 
+9b2571f953da82cb790014cf6cb35f13e2b7ba31
+
 2. What is the SHA for the last commit associated with line 9 of this file?
+
+b2ed39de
 
 3. What did line 12 of this file say in commit d1d83?
 
+Line 12 did not have "neitherGit nor I need the whole SHA."
+
 4. What changed between commit e474c and 82045?
+
+-    gross_sort = lambda x : x["Gross"]
++    gross_sort = lambda x : int(x["Gross"])
+-    top_five = rows[:-5:-1]
++    top_five = rows[:-6:-1]
 
 ## Predicting merges
 
@@ -37,6 +48,7 @@ What branches would change, and how?
 git checkout test
 git merge top_N
 ```
+All the changes in top_N will be merged into the test branch.
 
 6. What do you think would happen if you ran the following commands?
 What branches would change, and how?
@@ -44,6 +56,7 @@ What branches would change, and how?
 git checkout top_ten
 git merge test
 ```
+The changes made in the test branch will be merged into the top_ten branch.
 
 7. What do you think would happen if you ran the following commands?
 What branches would change, and how?
@@ -52,3 +65,4 @@ git checkout test
 git rebase top_ten
 git rebase top_N
 ```
+Running this command will put the changes made from top_ten and top_N in front of the earliest change of test.
